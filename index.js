@@ -11,7 +11,10 @@ app.use(express.json());
 // Configure CORS to allow requests from your frontend
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace with your frontend URL
+    origin: [
+      "http://localhost:5173", // Allow local development
+      "https://willowy-biscochitos-2af948.netlify.app", // Allow production frontend
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -79,5 +82,5 @@ app.get("/employees", (req, res) => {
 
 // Start the server
 app.listen(process.env.PORT || 3001, () => {
-  console.log(`Server is running on port ${process.env.PORT}`);
+  console.log(`Server is running on port ${process.env.PORT || 3001}`);
 });
