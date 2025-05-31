@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", // Allow local development
-      "https://willowy-biscochitos-2af948.netlify.app",
+      "https://astounding-dasik-a5cb88.netlify.app/",
       "*", // Allow production frontend
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
