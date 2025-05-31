@@ -17,11 +17,12 @@ app.use(
   })
 );
 
-// Connect to MongoDB without deprecated options
+// Connect to MongoDB with increased timeout
 mongoose
   .connect(process.env.URI, {
     tls: true, // Enable TLS
     tlsInsecure: true, // Disable SSL verification (for development only)
+    serverSelectionTimeoutMS: 20000, // Increase timeout to 20 seconds
   })
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
