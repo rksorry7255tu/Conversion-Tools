@@ -13,11 +13,10 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173", // Allow local development
-      "https://astounding-dasik-a5cb88.netlify.app/",
-      "*", // Allow production frontend
+      "https://astounding-dasik-a5cb88.netlify.app/", // Allow production frontend
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
+    credentials: true, // Enable credentials
   })
 );
 
